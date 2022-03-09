@@ -1,0 +1,106 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 09, 2022 at 03:41 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `edrian22`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chatbot_hints`
+--
+
+CREATE TABLE `chatbot_hints` (
+  `id` int(11) NOT NULL,
+  `question` varchar(100) NOT NULL,
+  `reply` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `chatbot_hints`
+--
+
+INSERT INTO `chatbot_hints` (`id`, `question`, `reply`) VALUES
+(1, 'HI||Hello||Hola|hey|Hoy|hi|hello|sup|bro|brad|tol|pare|par', 'Hi,Thank you for contacting us. we\'re received your message and appreciate your reaching out.'),
+(2, 'good morning| goodmorning|good|morning|evening|eve|nyt|night|good night|good afternoon|goodafternoon', 'It will respond from 9:00 a.m to 5:00 p.m , monday to friday only. this is an AUTOREPLY.Thank you'),
+(3, 'what|where|when|we|pano|sino|ano|kaylan|bakit|paano', 'sorry were not available right now'),
+(4, 'what should I call you', 'You can call me covBot'),
+(5, '', ''),
+(6, 'Bye||See you later||Have a Good Day', 'Sad to see you are going. Have a nice day');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `added_on` datetime NOT NULL,
+  `type` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `message`, `added_on`, `type`) VALUES
+(14, 'hi', '2022-03-09 08:07:52', 'user'),
+(15, 'ano', '2022-03-09 08:08:05', 'user'),
+(16, 'sorry were not available right now', '2022-03-09 08:08:05', 'bot');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chatbot_hints`
+--
+ALTER TABLE `chatbot_hints`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chatbot_hints`
+--
+ALTER TABLE `chatbot_hints`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
